@@ -8,13 +8,13 @@ class MainActivity : AppCompatActivity() {
         
 
         // add JavascriptInterface - ex) name : "Android"
-        webview.addJavascriptInterface(WebAppInterface(this), "Android")
+        webview.addJavascriptInterface(JavaScriptInterface(this), "Android")
 
         webview.loadUrl("file:///android_asset/sample.html")
     }
 
     /** Instantiate the interface and set the context  */
-    class WebAppInterface(private val mContext: Context) {
+    class JavaScriptInterface(private val mContext: Context) {
 
         /** Show a toast from the web page  */
         @JavascriptInterface
